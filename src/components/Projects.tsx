@@ -13,8 +13,11 @@ import { useEffect, useState } from 'react';
 import useSWR, { SWRResponse } from 'swr';
 // import { projects as data } from '@/utils/data'
 
-export default function Projects({projects: data}: {projects: any}) {
- 
+export default function Projects() {
+  const { data, error, isLoading }: SWRResponse<any, any> = useSWR(
+    '/api/projects',
+    fetcher
+  );
 
   useEffect(() => {
     setWorks(data);
@@ -41,7 +44,8 @@ export default function Projects({projects: data}: {projects: any}) {
     }, 500);
   };
 
-  if (!Projects) return <Loading />;
+  if (isLoading) return <Loading />;
+  if (error) return <div>Failed to load user</div>;
 
   // if (isLoading) return <Loading />;
   return (
