@@ -1,7 +1,10 @@
 import Projects from "@/components/Projects";
 import prisma from "@/utils/connect";
+export const dynamic = 'force-dynamic';
 
-export default async function ProjectsPage() {
+
+
+async function ProjectsPage() {
  
     const projects = await prisma.projects.findMany();
 	console.log(projects);
@@ -9,3 +12,5 @@ export default async function ProjectsPage() {
     <Projects projects={projects}/>
   );
 }
+
+export default ProjectsPage;
