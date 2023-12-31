@@ -1,6 +1,8 @@
 import { getAuthSession } from '@/utils/auth';
 import prisma from '@/utils/connect';
 import { NextResponse } from 'next/server';
+export const maxDuration = 300; // This function can run for a maximum of 5 seconds
+
 
 export const GET = async () => {
   try {
