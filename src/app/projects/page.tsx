@@ -11,18 +11,19 @@ import { EyeIcon, GithubIconRounded } from '@/utils/icons';
 import { fadeIn } from '@/utils/motion';
 import { useEffect, useState } from 'react';
 import useSWR, { SWRResponse } from 'swr';
-// import { projects as data } from '@/utils/data'
+import { projects as data } from '@/utils/data'
+import Image from 'next/image';
 
 export default function Projects() {
-  const { data, error, isLoading }: SWRResponse<any, any> = useSWR(
-    '/api/projects',
-    fetcher
-  );
+//   const { data, error, isLoading }: SWRResponse<any, any> = useSWR(
+//     '/api/projects',
+//     fetcher
+//   );
 
   useEffect(() => {
     setWorks(data);
     setFilterWork(data);
-  }, [data]);
+  }, []);
 
   const [works, setWorks] = useState(data);
   const [filterWork, setFilterWork] = useState(data);
@@ -44,10 +45,7 @@ export default function Projects() {
     }, 500);
   };
 
-  if (isLoading) return <Loading />;
-  if (error) return <div>Failed to load user</div>;
 
-  // if (isLoading) return <Loading />;
   return (
     <Container
       // variants={staggerContainer}
@@ -102,12 +100,12 @@ export default function Projects() {
                 key={index}
               >
                 <div className=' group relative flex h-[230px] w-full items-center  justify-center brightness-75 '>
-                  <CloudImage
+                  <Image
                     height={400}
                     width={400}
                     src={work.imgUrl}
                     alt={work.title}
-                    customStyles='all_animation h-[230px] w-full rounded-lg object-cover opacity-80 grayscale filter group-hover:opacity-100 group-hover:grayscale-0 '
+                    className='all_animation h-[230px] w-full rounded-lg object-cover opacity-80 grayscale filter group-hover:opacity-100 group-hover:grayscale-0 '
                   />
 
                   <div className='  all_animation absolute inset-0 flex h-[230px] w-full items-center justify-center gap-x-3 rounded-lg bg-black  bg-opacity-50 opacity-0 group-hover:opacity-100 '>
