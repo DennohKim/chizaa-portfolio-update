@@ -31,7 +31,7 @@ export default function Skills() {
       />
 
       <div className='mx-auto mt-12 flex w-full flex-col sm:w-4/5 lg:flex-row'>
-        <TextContainer customStyles='mb-5 mr-0 flex flex-1 flex-wrap items-center justify-center sm:items-start sm:justify-start lg:mb-0 lg:mr-20  '>
+        <TextContainer customStyles='mb-5 mr-0 flex flex-1 flex-wrap items-center justify-center sm:items-start sm:justify-start lg:mb-0 lg:pr-14  '>
           {mySkills.map((skill) => (
             <TextContainer
               whileInView={{ opacity: [0, 1] }}
@@ -81,10 +81,10 @@ export default function Skills() {
                     <div className='  text-left text-base font-extrabold text-primary-color '>
                       {work.name}
                     </div>
-                    <div className=' p-text mt-[5px] text-left text-sm leading-normal text-slate-color-lighter '>
+                    <div className=' p-text mt-[5px] text-left text-normal leading-normal text-slate-color-lighter '>
                       {work.company}
                     </div>
-                    <div className='text-left text-xs text-slate-color '>
+                    <div className='text-left text-sm text-slate-color '>
                       {work.desc}
                     </div>
                   </TextContainer>

@@ -107,22 +107,22 @@ export const mySkills = [
 
 export const myExperiences = [
   {
-    year: '2017 - Present',
+    year: 'Aug 2022 - Present',
     work: [
       {
         name: 'Front-End Software Engineer',
-        company: 'Upwork',
-        desc: 'Worked on  web application using Next.js,MERN and fixing bugs',
+        company: 'Silvi Protocol',
+        desc: 'Silvi is a trailblazing company committed to fostering global reForestation, I play a pivotal role in building an intuitive user friendly app that creates opportunities for tree stewards worldwide.',
       },
     ],
   },
   {
-    year: '2015 - 2017',
+    year: 'Apr 2017 - July 2022',
     work: [
       {
-        name: 'Graphic Designer',
-        company: 'Fiverr',
-        desc: 'Make logo, banner, poster, business card',
+        name: 'Freelance UI/UX Consultant and Web Developer',
+        company: 'Chizaalabs',
+        desc: 'Developing user personas, building user flows, affinity diagramming, building layouts and reusable components, creating UI animations. Building websites and web apps.',
       },
     ],
   },
