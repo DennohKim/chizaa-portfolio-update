@@ -119,7 +119,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
               {formatDate(post.metadata.publishedAt)}
             </p>
           </div>
-          <article className='prose prose-quoteless prose-neutral prose-pre:text-purple-300 prose-code:text-pink-300 prose-p:text-neutral-300 prose-li:text-neutral-400 prose-a:text-purple-300 prose-headings:text-white prose-h1:font-bold  '>
+          <article className='prose prose-quoteless prose-neutral prose-pre:text-purple-300 prose-code:text-pink-300 prose-p:text-neutral-200 prose-li:text-neutral-300 prose-a:text-pink-300 prose-headings:text-white prose-h1:font-bold  '>
             <CustomMDX source={post.content} />
           </article>
         </div>
