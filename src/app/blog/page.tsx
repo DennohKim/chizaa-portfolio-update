@@ -31,8 +31,11 @@ export default function BlogPage() {
             href={`/blog/${post.slug}`}
           >
             <div className='w-full flex flex-col'>
-              <p className='text-neutral-100 dark:text-neutral-100 tracking-tight hover:text-neutral-400'>
+              <p className='text-neutral-100 tracking-tight hover:underline'>
                 {post.metadata.title}
+              </p>
+              <p className='text-neutral-400  '>
+                {post.metadata.publishedAt}
               </p>
               {/* <Suspense fallback={<p className='h-6' />}>
                 <Views slug={post.slug} />
