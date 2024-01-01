@@ -19,8 +19,8 @@ export async function generateMetadata({
     image,
   } = post.metadata;
   let ogImage = image
-    ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    ? `https://${image}`
+    : `https://denniskimathi.dev/og?title=${title}`;
 
   return {
     title,
@@ -30,7 +30,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://denniskimathi.dev/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -115,11 +115,11 @@ export default function Blog({ params }: { params: { slug: string } }) {
             {post.metadata.title}
           </h1>
           <div className='flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]'>
-            <p className='text-sm text-neutral-200'>
+            <p className='text-sm text-neutral-300'>
               {formatDate(post.metadata.publishedAt)}
             </p>
           </div>
-          <article className='prose prose-quoteless prose-neutral prose-pre:text-purple-300 prose-code:text-pink-300 prose-p:text-neutral-200 prose-li:text-neutral-300 prose-a:text-pink-300 prose-headings:text-white prose-h1:font-bold  '>
+          <article className='prose prose-quoteless prose-neutral prose-pre:text-purple-300 prose-code:text-pink-400 prose-p:text-neutral-100 prose-li:text-neutral-300 prose-a:text-teal-300 prose-headings:text-white prose-h1:font-bold  '>
             <CustomMDX source={post.content} />
           </article>
         </div>

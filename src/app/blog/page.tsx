@@ -11,10 +11,13 @@ export default function BlogPage() {
   let allBlogs = getBlogPosts();
 
   return (
-    <section className='mx-auto max-w-5xl flex flex-col gap-y-8 sm:gap-y-4 py-8'>
-      <h1 className='font-medium text-2xl mb-8 tracking-tighter'>
-        read my blog
-      </h1>
+    <section className='mx-auto max-w-5xl flex flex-col gap-y-8 sm:gap-y-4 py-8 px-4'>
+      <h1 className='font-semibold text-2xl text-primary-color tracking-tighter'>Read my blog</h1>
+      <p className='font-normal mb-8'>
+        On my blog, I share the build process of projects, debugging error codes, and
+        discuss technologies I find fascinating like JS frontend frameworks, blockchain,
+        devops, and UI/UX design. Take a look!
+      </p>
       {allBlogs
         .sort((a, b) => {
           if (
@@ -31,12 +34,10 @@ export default function BlogPage() {
             href={`/blog/${post.slug}`}
           >
             <div className='w-full flex flex-col'>
-              <p className='text-neutral-100 tracking-tight hover:underline'>
+              <p className='text-neutral-100 font-medium tracking-tight hover:underline'>
                 {post.metadata.title}
               </p>
-              <p className='text-neutral-400  '>
-                {post.metadata.publishedAt}
-              </p>
+              <p className='text-neutral-400  '>{post.metadata.publishedAt}</p>
               {/* <Suspense fallback={<p className='h-6' />}>
                 <Views slug={post.slug} />
               </Suspense> */}

@@ -2,12 +2,8 @@ import Image from 'next/image';
 
 export default function Loading() {
   return (
-    <Image
-      alt='loading......'
-      height={500}
-      width={500}
-      className='mx-auto mb-60 mt-28 h-44 w-44 animate-pulse  transition duration-300'
-      src='/asset/logo-dennis.svg'
-    />
+    <div className='flex h-screen items-center justify-center w-full'>
+      <div className='w-10 h-10 rounded-full border-4 border-b-transparent animate-spin border-primary-color' />
+    </div>
   );
 }

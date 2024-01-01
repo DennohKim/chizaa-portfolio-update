@@ -5,7 +5,7 @@ import NavBar from '@/components/NavBar';
 import FooterCredit from '@/components/FooterCredit';
 import AuthProvider from '@/utils/AuthProvider';
 
-const quickSand = Quicksand({ subsets: ['latin'], weight: ['400', '700'] });
+const quickSand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500','600', '700'] });
 
 export const metadata: Metadata = {
   title: 'Dennis Kimathi Website',
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${quickSand.className} mx-auto max-w-screen-2xl text-[#e6ebff]`}
+        className={`${quickSand.className} mx-auto max-w-7xl text-[#e6ebff]`}
       >
         <AuthProvider>
           <NavBar />
