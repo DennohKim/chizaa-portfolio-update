@@ -86,40 +86,44 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
-      <script
-        type='application/ld+json'
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `https://denniskimathi.dev${post.metadata.image}`
-              : `https://denniskimathi.dev/og?title=${post.metadata.title}`,
-            url: `https://denniskimathi.dev/blog/${post.slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'Dennis Kimathi',
-            },
-          }),
-        }}
-      />
-      <h1 className='title font-medium text-2xl tracking-tighter max-w-[650px]'>
-        {post.metadata.title}
-      </h1>
-      <div className='flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]'>
-        <p className='text-sm text-neutral-600 dark:text-neutral-400'>
-          {formatDate(post.metadata.publishedAt)}
-        </p>
-      </div>
-      <article className='prose prose-quoteless prose-neutral dark:prose-invert'>
-        <CustomMDX source={post.content} />
-      </article>
-    </section>
+    <main className='container relative mx-auto scroll overflow-auto p-4 print:p-4 md:p-6'>
+      <section className='mx-auto w-full max-w-2xl space-y-8 print:space-y-6'>
+        <script
+          type='application/ld+json'
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: post.metadata.title,
+              datePublished: post.metadata.publishedAt,
+              dateModified: post.metadata.publishedAt,
+              description: post.metadata.summary,
+              image: post.metadata.image
+                ? `https://denniskimathi.dev${post.metadata.image}`
+                : `https://denniskimathi.dev/og?title=${post.metadata.title}`,
+              url: `https://denniskimathi.dev/blog/${post.slug}`,
+              author: {
+                '@type': 'Person',
+                name: 'Dennis Kimathi',
+              },
+            }),
+          }}
+        />
+        <div className=''>
+          <h1 className='title font-medium text-2xl tracking-tighter max-w-[650px]'>
+            {post.metadata.title}
+          </h1>
+          <div className='flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]'>
+            <p className='text-sm text-neutral-200'>
+              {formatDate(post.metadata.publishedAt)}
+            </p>
+          </div>
+          <article className='prose prose-quoteless prose-neutral prose-pre:text-purple-300 prose-code:text-pink-300 prose-p:text-neutral-300 prose-li:text-neutral-400 prose-a:text-purple-300 prose-headings:text-white prose-h1:font-bold  '>
+            <CustomMDX source={post.content} />
+          </article>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -138,7 +138,7 @@ function Code({ children, ...props }: any) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
-function slugify(str: string) {
+function slugify(str: any) {
   return str
     .toString()
     .toLowerCase()
@@ -149,7 +149,7 @@ function slugify(str: string) {
     .replace(/\-\-+/g, '-'); // Replace multiple - with single -
 }
 
-function createHeading(level: number) {
+function createHeading(level: any) {
   const HeadingComponent = ({ children }: any) => {
     let slug = slugify(children);
     return React.createElement(

@@ -61,6 +61,14 @@ const config = {
         'slate-color-lighter': 'var(--slate-color-lighter)',
         'slate-color-lightest': 'var(--slate-color-lightest)',
       },
+      typography: {
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
+          },
+        },
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
