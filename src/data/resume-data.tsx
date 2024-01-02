@@ -29,7 +29,7 @@ export const RESUME_DATA = {
   summary:
     'I am a highly-motivated, creative and pro-active designer and web developer able to research, design and develop user experiences for various digital products including mobile applications, websites and web applications. I use my broad range of skills to execute designs that are clean, simple and effective.',
   avatarUrl:
-    'https://www.denniskimathi.dev/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F1p71u5pj%2Fproduction%2Fc99fba0287111e176f3fa1c653d3f8b446978aef-1080x1080.jpg&w=256&q=75',
+    'https://cdn.sanity.io/images/1p71u5pj/production/c99fba0287111e176f3fa1c653d3f8b446978aef-1080x1080.jpg?w=2000&fit=max&auto=format',
   personalWebsiteUrl: 'https://denniskimathi.dev',
   contact: {
     email: 'kimathidennis38@gmail.com',
