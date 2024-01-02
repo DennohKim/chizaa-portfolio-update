@@ -30,8 +30,26 @@ import sumz from '/public/asset/projects/sumz.webp';
 import fiverr from '/public/asset/fiverr.png';
 import freelancer from '/public/asset/freelancer.jpeg';
 import upwork from '/public/asset/upwork.png';
+import nafter from '/public/asset/projects/nafter.png';
+import web3guardian from '/public/asset/projects/web3guardian.jpeg';
+import toucan from '/public/asset/projects/toucanproject.png';
+import portfolio from '/public/asset/projects/portfolio.png';
+import celodev from '/public/asset/projects/celodevstream.png';
+import lumen from '/public/asset/projects/lumen.png';
+import tumaini from '/public/asset/projects/tumaini.png';
+import juakali from '/public/asset/projects/juakali.png';
+
+
 
 export {
+	tumaini,
+	juakali,
+	lumen,
+	portfolio,
+	celodev,
+	toucan,
+	web3guardian,
+	nafter,
   LovelyMusic,
   bootstrap,
   docker,
@@ -161,7 +179,7 @@ export const sliderNavigation = [
 export const projects = [
   {
     title: 'Nafter',
-    imgUrl: fawflix,
+    imgUrl: nafter,
     projectLink: 'https://nft-marketplace-dof7f3erp-dennohkim.vercel.app/',
     codeLink: 'https://fawflix.vercel.app/',
     description:
@@ -170,7 +188,7 @@ export const projects = [
   },
   {
     title: 'TumainiDAO',
-    imgUrl: gbdc,
+    imgUrl: tumaini,
     projectLink: 'https://tumainid-a-o.vercel.app/',
     codeLink: 'https://github.com/AariyanApu/gbdc',
     description:
@@ -179,7 +197,7 @@ export const projects = [
   },
   {
     title: 'Portfolio Site',
-    imgUrl: lovelytube,
+    imgUrl: portfolio,
     projectLink: 'https://www.denniskimathi.dev/',
     codeLink: 'https://lovelytube.vercel.app/',
     description: 'My personal website and blog. Built with Next.js and MDX',
@@ -187,7 +205,7 @@ export const projects = [
   },
   {
     title: 'JuakaliKE',
-    imgUrl: lranslate,
+    imgUrl: juakali,
     projectLink: 'https://juakali-marketplace-d-app-react-app.vercel.app/',
     codeLink: 'https://lranslate.vercel.app/',
     description: 'A marketplace dapp built on celo blockchain',
@@ -195,7 +213,7 @@ export const projects = [
   },
   {
     title: 'CarbonHero',
-    imgUrl: LovelyMusic,
+    imgUrl: toucan,
     projectLink: 'https://toucan-protocol-sdk-react-app.vercel.app/',
     codeLink: 'https://github.com/DennohKim/toucan-protocol-sdk',
     description: 'Retiring carbon credit on celo blockchain',
@@ -203,7 +221,7 @@ export const projects = [
   },
   {
     title: 'CeloDev Stream',
-    imgUrl: sumz,
+    imgUrl: celodev,
     projectLink: 'https://codejam-streaming-rewards-react-app.vercel.app/',
     codeLink: 'https://github.com/DennohKim/codejam-streaming-rewards',
     description:
@@ -212,7 +230,7 @@ export const projects = [
   },
   {
     title: 'LumenPay',
-    imgUrl: sumz,
+    imgUrl: lumen,
     projectLink: 'https://lumenpay-website.vercel.app/',
     codeLink: 'https://lumenpay-website.vercel.app/',
     description:
@@ -221,7 +239,7 @@ export const projects = [
   },
   {
     title: 'Web3Guardian',
-    imgUrl: sumz,
+    imgUrl: web3guardian,
     projectLink: 'https://t.me/web3guardian_utu_bot',
     codeLink: 'https://github.com/Web3Guardian/web3guardian--utu-bot',
     description:
