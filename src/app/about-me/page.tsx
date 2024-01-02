@@ -16,7 +16,7 @@ export default function AboutMe() {
           <TypingTitle title='My Skills' />
           <p className='my-8 flex w-full flex-wrap items-center justify-between sm:my-14 sm:px-36'>
             <img
-              src='https://skillicons.dev/icons?i=nextjs,vite,react,redux,tailwind,materialui,sass,bootstrap,ts,js,express,nodejs,mongodb,postgres,prisma,redis,html,css,jquery,md,linux,git,docker,github,babel,bash,neovim,vim,ps,postman'
+              src='https://skillicons.dev/icons?i=nextjs,vite,react,redux,figma,tailwind,materialui,sass,ts,js,express,nodejs,mongodb,postgres,rails,prisma,redis,html,css,md,linux,git,docker,github,babel,bash,vim,ps,postman,go,rust'
               alt='My skills'
             />
           </p>
