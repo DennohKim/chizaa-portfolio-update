@@ -215,5 +215,34 @@ export const RESUME_DATA = {
         href: 'https://codejam-streaming-rewards-react-app.vercel.app/',
       },
     },
+    {
+      title: 'LumenPay',
+      techStack: ['React', 'TailwindCSS', 'NodeJS', 'Express'],
+      description:
+        'A Crypto Payroll Platform to help employers to manage their payroll and pay their employees with crypto',
+      logo: Minimal,
+      link: {
+        label: 'LumenPay',
+        href: 'https://lumenpay-website.vercel.app/',
+      },
+    },
+    {
+      title: 'Web3Guardian',
+      techStack: [
+        'Typescript',
+        'Web3',
+        'Telegram Bot',
+        'NodeJS',
+        'Ethers.js',
+        'UTU Protocol',
+      ],
+      description:
+        'A telegram bot that leverages the UTU Web3 Protocol to provide reputation checks on telegram users',
+      logo: Minimal,
+      link: {
+        label: 'Web3Guardian',
+        href: 'https://t.me/web3guardian_utu_bot',
+      },
+    },
   ],
 } as const;

@@ -8,15 +8,12 @@ export default function NavTextContainer() {
     <motion.div variants={textContainer} className='hidden sm:ml-6 sm:block'>
       <div className='flex space-x-4 '>
         {navigation.map((item) => (
-          <Link key={item.name} href={item.href}>
-            <motion.div
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              variants={textVariant2}
-              className='color_animation rounded-md px-3 py-2 text-sm font-semibold text-slate-color-light hover:bg-secondary-color hover:text-primary-color'
-            >
-              {item.name}
-            </motion.div>
+          <Link
+            key={item.name}
+            href={item.href}
+            className='color_animation rounded-md px-3 py-2 text-sm font-semibold text-slate-color-light hover:bg-secondary-color hover:text-primary-color'
+          >
+            {item.name}
           </Link>
         ))}
       </div>

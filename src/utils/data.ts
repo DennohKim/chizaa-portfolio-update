@@ -210,7 +210,24 @@ export const projects = [
       'Token streaming dapp built with superfluid that rewards developers in celo ecosystem',
     tags: ['React', 'Next.js', 'Web3'],
   },
-  
+  {
+    title: 'LumenPay',
+    imgUrl: sumz,
+    projectLink: 'https://lumenpay-website.vercel.app/',
+    codeLink: 'https://lumenpay-website.vercel.app/',
+    description:
+      'A Crypto Payroll Platform to help employers to manage their payroll and pay their employees with crypto ',
+    tags: ['React', 'LandingPage', 'UI/UX'],
+  },
+  {
+    title: 'Web3Guardian',
+    imgUrl: sumz,
+    projectLink: 'https://t.me/web3guardian_utu_bot',
+    codeLink: 'https://github.com/Web3Guardian/web3guardian--utu-bot',
+    description:
+      'A telegram bot that leverages the UTU Web3 Protocol to provide reputation checks on telegram users',
+    tags: ['Typescript', 'Web3', 'Telegram Bot'],
+  },
 ];
 export const navigation = [
   { name: 'ABOUT ME', href: '/about-me' },

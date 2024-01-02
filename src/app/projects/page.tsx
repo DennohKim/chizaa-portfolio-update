@@ -54,7 +54,7 @@ export default function Projects() {
       <h1
         className={`my-5 text-center text-4xl text-slate-color-lighter  ${heroTitle.className}`}
       >
-        Some Projects That I Have Built
+        Some Projects I Have Built
       </h1>
       <TextContainer variants={fadeIn('up', 'tween', 0.7, 0.7)}>
         <div className='flex justify-between'>
