@@ -45,7 +45,7 @@ export default function Project() {
       <TextContainer variants={fadeIn('up', 'tween', 0.7, 0.7)}>
         <div className='flex justify-between'>
           <div className='my-3 mr-0 flex flex-row flex-wrap items-center justify-start sm:my-4'>
-            {['Landing Page', 'API', 'Next.js', 'React.js', 'MERN', 'All']?.map(
+            {['Landing Page','React', 'Next.js', 'Web3', 'UI/UX', 'All']?.map(
               (item, index) => (
                 <div
                   key={index}

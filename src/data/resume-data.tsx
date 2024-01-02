@@ -180,6 +180,40 @@ export const RESUME_DATA = {
         href: 'https://juakali-marketplace-d-app-react-app.vercel.app/',
       },
     },
-    
+    {
+      title: 'CarbonHero',
+      techStack: [
+        'Hackathon',
+        'Next.js',
+        'ToucanSDK',
+        'Celo',
+        'Graphql',
+        'Graph Protocol',
+      ],
+      description: 'a marketplace dapp built on celo blockchain',
+      logo: Minimal,
+      link: {
+        label: 'carbonhero',
+        href: 'https://toucan-protocol-sdk-react-app.vercel.app/',
+      },
+    },
+    {
+      title: 'CeloDev Stream',
+      techStack: [
+        'Hackathon',
+        'Next.js',
+        'SuperfluidSDK',
+        'Celo',
+        'Hardhat',
+        'Solidity',
+      ],
+      description:
+        'Token streaming dapp built with superfluid that rewards developers in celo ecosystem',
+      logo: Minimal,
+      link: {
+        label: 'CeloDevStream',
+        href: 'https://codejam-streaming-rewards-react-app.vercel.app/',
+      },
+    },
   ],
 } as const;

@@ -59,31 +59,21 @@ export default function Projects() {
       <TextContainer variants={fadeIn('up', 'tween', 0.7, 0.7)}>
         <div className='flex justify-between'>
           <div className='mx-auto my-3  flex flex-row flex-wrap items-center justify-center sm:my-4'>
-            {[
-              'All',
-              'Next.js',
-              'React.js',
-              'MERN',
-              'API',
-              'Tailwind CSS',
-              'Landing Page',
-              'SCSS',
-              'CSS',
-              'MUI',
-              'Node.js',
-            ]?.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => handleWorkFilter(item)}
-                className={` m-1 flex cursor-pointer  items-center justify-center rounded-lg  bg-background-color p-2 px-3 text-center text-sm font-extrabold text-slate-color-lighter transition-all duration-300 ease-in hover:bg-secondary-color hover:text-primary-color   ${
-                  activeFilter === item
-                    ? 'bg-secondary-color text-emerald-300'
-                    : ''
-                }`}
-              >
-                {item}
-              </div>
-            ))}
+            {['Landing Page', 'React', 'Next.js', 'Web3', 'UI/UX', 'All']?.map(
+              (item, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleWorkFilter(item)}
+                  className={` m-1 flex cursor-pointer  items-center justify-center rounded-lg  bg-background-color p-2 px-3 text-center text-sm font-extrabold text-slate-color-lighter transition-all duration-300 ease-in hover:bg-secondary-color hover:text-primary-color   ${
+                    activeFilter === item
+                      ? 'bg-secondary-color text-emerald-300'
+                      : ''
+                  }`}
+                >
+                  {item}
+                </div>
+              )
+            )}
           </div>
         </div>
 
