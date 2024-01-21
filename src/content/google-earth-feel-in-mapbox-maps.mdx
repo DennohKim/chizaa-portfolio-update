@@ -1,0 +1,156 @@
+---
+title: 'Using local storage to persist users last location on mapbox'
+publishedAt: '2024-01-21'
+summary: 'In this tutorial, you will learn how to return to your last location mapbox using local storage.'
+---
+
+## Introduction
+
+In this tutorial, you will learn how to return to your last location mapbox using local storage.
+
+## Prerequisites​
+
+To start building, you’ll need a basic understanding of web development, Node (v16), yarn, Javascript and React.
+
+- [Node (v16)](https://nodejs.org/en/), [NVM](https://github.com/nvm-sh/nvm)
+- [Yarn](https://classic.yarnpkg.com/en/)
+- [Javascript](https://www.javascript.com/)
+- [React](https://react.dev/)
+- [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/)
+
+## Getting Started
+
+Bootstrap a react app using vite with the following command
+
+```bash
+npm create vite@latest
+```
+
+Give your project a name and Select `react` framework and `typescript`.
+
+## Set up Mapbox
+
+Install [mapbox-gl](https://docs.mapbox.com/mapbox-gl-js/guides/install/) using the following command
+
+```bash
+
+npm install mapbox-gl --save
+
+
+```
+
+## Initialize the Map
+
+Create a new file called `Mapbox.tsx` in the `src` folder and add the following code
+
+```ts
+import React, { useEffect, useRef, useState } from 'react';
+import mapboxgl from 'mapbox-gl';
+
+const Mapbox: React.FC = () => {
+  const [map, setMap] = useState<mapboxgl.Map | null>(null);
+  const [selectedLayer, setSelectedLayer] = useState<string>(
+    'satellite-streets-v12'
+  );
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mapContainer = useRef<any>(null);
+
+  useEffect(() => {
+    if (map) return;
+
+    const mapboxMap = new mapboxgl.Map({
+      accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
+      container: mapContainer.current,
+      style: `mapbox://styles/mapbox/${selectedLayer}`,
+      center: [0, 0],
+      zoom: 1,
+    });
+
+    setMap(mapboxMap);
+  }, [map]);
+
+  return (
+    <>
+      <div
+        className='h-screen w-full relative flex flex-col'
+        ref={mapContainer}
+      ></div>
+    </>
+  );
+};
+
+export default Mapbox;
+```
+
+- Import the necessary react hooks and mapbox-gl.
+
+- Create a state variable to hold the map instance.
+
+- Create a ref to hold the map container. The map's container is stored in a ref, which allows direct access to the DOM node.
+
+- Initialize the map instance in the `useEffect` hook. Inside this hook, a new Mapbox map is created and stored in state. The map's container is set to the current value of 'mapContainer', and the map's style, center, and zoom level are also set. The map is initialized using the satelitte-streets-v12 style.
+
+- Return the map container in the render method.
+
+## Using local storage to persist users last location on mapbox
+
+Update the map initialization code to the following
+
+```tsx
+
+// ...Existing code
+
+useEffect(() => {
+    if (map) return;
+
+    const savedCenter = localStorage.getItem('mapCenter');
+    const savedZoom = localStorage.getItem('mapZoom');
+
+    const savedCenterArray = savedCenter ? JSON.parse(savedCenter) : [0, 0];
+    const savedZoomValue = savedZoom ? parseFloat(savedZoom) : 2;
+
+    const mapboxMap = new mapboxgl.Map({
+      accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
+      container: mapContainer.current,
+      style: `mapbox://styles/mapbox/${selectedLayer}`,
+      center: savedCenterArray,
+      zoom: savedZoomValue,
+    });
+
+    mapboxMap.on('moveend', () => {
+      const { lng, lat } = mapboxMap.getCenter();
+      const zoom = mapboxMap.getZoom();
+
+      localStorage.setItem('mapCenter', JSON.stringify([lng, lat]));
+      localStorage.setItem('mapZoom', zoom.toString());
+    });
+
+    setMap(mapboxMap);
+  }, [map, selectedLayer]);
+
+//   ...Existing code
+
+```
+
+- Add an event listener to the map's `moveend` event. This event is fired when the map's center or zoom value changes. When this event is fired, the map's center and zoom values are saved to local storage.
+
+- Get the saved center and zoom values from local storage. If the saved center and zoom values exist, use them to initialize the map.
+
+### Final Output
+
+<Image
+  alt={`Mapbox`}
+  src={`/asset/content/mapbox/google-earth.gif`}
+  width={1190}
+  height={108}
+/>
+
+
+---
+
+Congratulations! You've persisted a GeoJSON feature layer across different map styles on mapbox using react.
+
+- Mapbox - [documentation](https://docs.mapbox.com/mapbox-gl-js/example/style-switch/)
+- Github repo - [Source code](https://github.com/DennohKim/toggle-layers-geojson-source)
+- Live Link - [Demo](https://toggle-layers-geojson-source.vercel.app/)
