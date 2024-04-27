@@ -14,7 +14,7 @@ export default function BlogPage() {
     <section className='mx-auto max-w-5xl flex flex-col gap-y-8 sm:gap-y-4 py-8 px-4'>
       <h1 className='font-semibold text-2xl text-primary-color tracking-tighter'>Read my blog</h1>
       <p className='font-normal mb-8'>
-        On my blog, I share the build process of projects, debugging error codes, and
+        On my blog, I share the build process of projects, debugging error codes, running validator nodes and
         discuss technologies I find fascinating like JS frontend frameworks, blockchain,
         devops, and UI/UX design. Take a look!
       </p>
